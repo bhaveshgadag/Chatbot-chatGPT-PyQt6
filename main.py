@@ -20,8 +20,6 @@ class ChatWindow(QMainWindow):
         self.show()
 
 
-class Chatbot():
-    pass
 
 
 app = QApplication(sys.argv)
