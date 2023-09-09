@@ -14,12 +14,11 @@ class ChatWindow(QMainWindow):
         self.input_box = QTextEdit(self)
         self.input_box.setGeometry(10, 320, 400, 30)
 
+        # Send button
         self.button = QPushButton("Send", self)
         self.button.setGeometry(420, 320, 50, 30)
 
         self.show()
-
-
 
 
 app = QApplication(sys.argv)
