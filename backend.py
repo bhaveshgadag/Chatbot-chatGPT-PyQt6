@@ -21,18 +21,20 @@ class Chatbot:
         return response
 
     def get_response_ugpt(self, user_input):
+        print(self.session_token)
+        print(self.conversation_id)
         chatbot_ugpt = ChatGPT(
             self.session_token,
             conversation_id=self.conversation_id,
             proxy=None,
             chrome_args=[],
             disable_moderation=False,
-            verbose=True,
+            verbose=True
         )
         message = chatbot_ugpt.send_message(
             user_input,
             input_mode="SLOW",  # Can be INSTANT or SLOW
-            input_delay=0.00001
+            input_delay=1
         )
         return message.response
 
@@ -44,8 +46,8 @@ if __name__ == '__main__':
     # reply = chatbot.get_response("Tell a joke.")
     # print(reply)
 
-    # Using alternative - UnlimitedGPT
-    response = chatbot.get_response_ugpt("what is chatgpt in 50 words?")
+    # Using alternative - UnlimitedGPT, headless does not work
+    response = chatbot.get_response_ugpt("tell an indian joke.")
     print("printing response")
     print(response)
 
